@@ -8,35 +8,254 @@
 
 body {
     margin: 2rem;
-    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
 }
 
 body.default {
+    font-family: 'Montserrat', sans-serif;
+
     --primary-text: #fff;
+    --secondary-text: #293241;
+    --tertiary-text: #fff;
     --link-text: #98c1d9;
-    --secondary-text: #e0fbfc;
 
     --primary-bg: #3d5a80;
     --secondary-bg: #98c1d9;
     --tertiary-bg: #293241;
 }
 
+/** start: physics **/
+body.physics {
+    font-family: 'Montserrat', sans-serif;
+
+    --primary-text: #fff;
+    --secondary-text: #293241;
+    --tertiary-text: #fff;
+    --link-text: #98c1d9;
+
+    --primary-bg: #3d5a80;
+    --secondary-bg: #98c1d9;
+    --tertiary-bg: #293241;
+}
+
+body.physics h1,
+body.physics h2,
+body.physics h3,
+body.physics h4 {
+    animation: falling-animation 5.8s ease-in-out forwards;
+}
+
+body.physics a {
+    animation: falling-animation 9.8s ease-in-out forwards;
+}
+
+body.physics section {
+    animation-delay: 6s;
+    animation: falling-animation 2s ease-in-out forwards;
+}
+
+body.physics section ul {
+    animation: falling-animation 8.8s ease-in forwards;
+}
+
+body.physics p {
+    animation: falling-animation 7.8s ease-in-out forwards;
+}
+
+@keyframes falling-animation {
+    from{
+        transform: translateY(0);
+    }
+    to { 
+        transform : translateY(100vh);
+    }
+}
+/** start: physics **/
+
+/** start: win95 **/
+body.win95 {
+    font-family: "Windows 95", sans-serif;
+    font-weight: 400;
+    background-color: #c0c0c0;
+    color: #000;
+
+    --primary-text: #000;
+    --secondary-text: #fff;
+    --tertiary-text: #fff;
+    --link-text: #000181;
+
+    --primary-bg: #c0c0c0;
+    --secondary-bg: #000181;
+    --tertiary-bg: #008081;
+}
+/** end: win95 **/
+
+/** start: manpage **/
+body.manpage {
+    font-family: helvetica, sans-serif;;
+    background-color: #fcfcfc;
+    color: #181818;
+
+    --primary-text: #181818;
+    --secondary-text: #A00000;
+    --tertiary-text:#502000;
+    --link-text: #1030ff;
+
+    --primary-bg: #fcfcfc;
+    --secondary-bg: #fcfcfc;
+    --tertiary-bg: #fcfcfc;
+}
+
+body.manpage section a:hover {
+    color: red;
+    background-color: #ffe0e0;
+    text-decoration: underline;
+}
+
+body.manpage article {
+    font-family: monospace, courier;
+}
+
+body.manpage h3 {
+    text-transform: lowercase;
+}
+
+body.manpage h4 {
+    text-transform: uppercase;
+}
+
+body.manpage h3::before {
+    content: "--";
+    margin-right: -0.3rem;
+}
+
+body.manpage footer {
+    background-color: #e8e8e8;
+    padding: 0;
+}
+
+body.manpage footer p,
+body.manpage footer blockquote {
+    text-align: left;
+    margin: 0.5rem 0;
+    padding: 0 1rem;
+}
+
+body.manpage nav {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #fff;
+    text-align: left;
+}
+
+body.manpage nav::before {
+    content: "Pages that refer to this page:";
+    color: #000;
+}
+
+body.manpage nav a {
+    margin-right: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--link-text);
+    text-decoration: none;
+}
+/** end: manpage **/
+
+/** start: terminal **/
+body.terminal {
+    font-family: Courier, monospace;
+    background-color: #000;
+    color: #fff;
+
+    --primary-text: #00FF00;
+    --secondary-text: #9f36ff;
+    --tertiary-text: #fff;
+    --link-text: #6f886c;
+
+    --primary-bg: #000;
+    --secondary-bg: #222;
+    --tertiary-bg: #333;
+}
+
+@font-face {
+    font-family: "Windows 95";
+    src: url("../font/w-95-sans-serif.woff2") format("woff2");
+}
+
+@keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: var(--primary-text);
+    }
+}
+
+body.terminal article p:last-of-type::after {
+    content: "|";
+    font-weight: 100;
+    color: var(--primary-text);
+    animation: 1s blink step-end infinite;
+}
+
+body.terminal h1::before {
+    content: "site@";
+    font-weight: 100;
+    margin-right: -1rem;
+    color: var(--tertiary-text);
+}
+
+body.terminal h2::before {
+    content: "> ";
+    font-weight: 100;
+    color: var(--secondary-text);
+}
+
+body.terminal h4::before {
+    content: "$";
+    font-weight: 100;
+    color: #ccc;
+}
+
+body.terminal h1::after {
+    content: "~$";
+    font-weight: 100;
+    margin-left: -1rem;
+    color: var(--secondary-text);
+}
+
+body.terminal h1 a::after {
+    content: ":";
+    font-weight: 100;
+    margin-left: -1rem;
+    color: var(--tertiary-text);
+}
+/** end: terminal **/
+
+section a {
+    color: var(--link-text);
+}
+
+section a:hover {
+    color: var(--primary-text);
+}
 
 .box {
     padding: 1rem;
     font-size: 1.3rem;
-    color: var(--secondary-text);
-}
-
-aside {
-    grid-area: sidebar;
-    background-color: var(--secondary-bg);
 }
 
 article {
     grid-area: content;
+    color: var(--primary-text);
     background-color: var(--primary-bg);
+}
+
+h1 a {
+    text-decoration: none;
+    color: var(--secondary-text);
 }
 
 header {
@@ -45,6 +264,31 @@ header {
 
 footer {
     grid-area: footer;
+}
+
+footer blockquote {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer p {
+    text-align: center;
+    font-size: 1rem;
+}
+
+aside {
+    grid-area: sidebar;
+    color: var(--secondary-text);
+    background-color: var(--secondary-bg);
+}
+
+aside img {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 50%;
+    filter: grayscale(1);
 }
 
 section {
@@ -59,6 +303,7 @@ section {
 
 header,
 footer {
+    color: var(--tertiary-text);
     background-color: var(--tertiary-bg);
 }
 
@@ -90,12 +335,18 @@ nav img {
     position: fixed;
     right: 0;
     top: 2%;
-    width: 10rem;
+    width: 15rem;
     padding: 0.5rem;
+    font-family: 'Montserrat', sans-serif !important;
     background-color: #3d5a80;
     color: #fff;
     border: 2px solid #000;
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+#current-theme {
+    color: #111;
+    font-weight: bold;
 }
 
 #theme-switch ul {
