@@ -16,8 +16,8 @@ body.default {
     --tertiary-bg: #293241;
 }
 
-/** start: physics **/
-body.physics {
+/** start: gravity **/
+body.gravity {
     font-family: 'Montserrat', sans-serif;
 
     --primary-text: #fff;
@@ -30,27 +30,27 @@ body.physics {
     --tertiary-bg: #293241;
 }
 
-body.physics h1,
-body.physics h2,
-body.physics h3,
-body.physics h4 {
+body.gravity h1,
+body.gravity h2,
+body.gravity h3,
+body.gravity h4 {
     animation: falling-animation 5.8s ease-in forwards;
 }
 
-body.physics a {
+body.gravity a {
     animation: falling-animation 9.8s ease-in forwards;
 }
 
-body.physics section {
+body.gravity section {
     animation-delay: 6s;
     animation: falling-animation 2s ease-in-out forwards;
 }
 
-body.physics section ul {
+body.gravity section ul {
     animation: falling-animation 8.8s ease-in forwards;
 }
 
-body.physics p {
+body.gravity p {
     animation: falling-animation 7.8s ease-in-out forwards;
 }
 
@@ -62,7 +62,7 @@ body.physics p {
         transform : translateY(100vh);
     }
 }
-/** start: physics **/
+/** start: gravity **/
 
 /** start: win95 **/
 body.win95 {
