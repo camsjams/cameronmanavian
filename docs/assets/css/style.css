@@ -164,10 +164,20 @@ body.toddler h1::before {
     color: var(--tertiary-text);
 }
 
+body.toddler h1::after {
+    content: "(My Dad)";
+    color: #3271d2;
+}
+
 body.toddler h2::before {
     content: "🐶";
     font-weight: 100;
     color: var(--secondary-text);
+}
+
+body.toddler h2::after {
+    content: "(He Fixes Computers)";
+    color:#9c6500;
 }
 
 body.toddler h4::before {
@@ -471,7 +481,7 @@ nav img {
 }
 
 #theme-switch[open] {
-    width: 15rem;
+    width: 16rem;
 }
 
 #theme-switch[open] span {

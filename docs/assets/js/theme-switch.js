@@ -29,6 +29,8 @@
                     .catch((error) => {
                         console.log('Sorry, this theme seems to have failed:', error);
                     });
+            } else if (document.getElementById('code-editor') !== null) {
+                document.body.removeChild(document.getElementById('code-editor'));
             }
         }
     })
