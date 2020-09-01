@@ -457,13 +457,25 @@ nav img {
     position: fixed;
     right: 0;
     top: 2%;
-    width: 15rem;
+    width: 1rem;
     padding: 0.5rem;
     font-family: 'Montserrat', sans-serif !important;
     background-color: #3d5a80;
     color: #fff;
     border: 2px solid #000;
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+#theme-switch span {
+    display: none;
+}
+
+#theme-switch[open] {
+    width: 15rem;
+}
+
+#theme-switch[open] span {
+    display: inline;
 }
 
 #current-theme {
