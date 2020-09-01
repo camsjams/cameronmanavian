@@ -1,11 +1,3 @@
-:root {
-    --bdazzled-blue: #3d5a80ff;
-    --pale-cerulean: #98c1d9ff;
-    --light-cyan: #e0fbfcff;
-    --burnt-sienna: #ee6c4dff;
-    --gunmetal: #293241ff;
-}
-
 body {
     margin: 2rem;
     font-size: 14px;
@@ -42,11 +34,11 @@ body.physics h1,
 body.physics h2,
 body.physics h3,
 body.physics h4 {
-    animation: falling-animation 5.8s ease-in-out forwards;
+    animation: falling-animation 5.8s ease-in forwards;
 }
 
 body.physics a {
-    animation: falling-animation 9.8s ease-in-out forwards;
+    animation: falling-animation 9.8s ease-in forwards;
 }
 
 body.physics section {
@@ -89,6 +81,136 @@ body.win95 {
     --tertiary-bg: #008081;
 }
 /** end: win95 **/
+
+/** start: code **/
+body.code {
+    font-family: 'Montserrat', sans-serif;
+
+    --primary-text: #fff;
+    --secondary-text: #293241;
+    --tertiary-text: #fff;
+    --link-text: #98c1d9;
+
+    --primary-bg: #3d5a80;
+    --secondary-bg: #98c1d9;
+    --tertiary-bg: #293241;
+}
+
+body.code #code-editor {
+    font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+    background-color: #1e1f26;
+    color: #fff;
+    border-bottom: 1.5rem solid #333642;
+    overflow: auto;
+}
+
+body.code #code-editor > details {
+    background: #1d1e22;
+    float: left;
+    width: calc(50% - 2.25rem);
+    min-height: 30rem;
+    padding: 0;
+    max-height: 30rem;
+}
+
+body.code #code-editor > details {
+    border-right: 1.5rem solid #333642;
+}
+
+body.code #code-editor > details.html {
+    border-left: 1.5rem solid #333642;
+}
+
+body.code #code-editor > details > summary {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    background-color: rgba(0,0,0,0.1);
+    margin: 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+body.code #code-editor textarea {
+    color: #fff;
+    width: calc(100% - 1rem);
+    background-color: transparent;
+}
+/** end: code **/
+
+/** start: toddler **/
+body.toddler {
+    font-family: 'Short Stack', cursive;
+    font-weight: 500;
+    background-color: #c0c0c0;
+    color: blue;
+
+    --primary-text: blue;
+    --secondary-text: red;
+    --tertiary-text: yellow;
+    --link-text: green;
+
+    --primary-bg: black;
+    --secondary-bg: purple;
+    --tertiary-bg:#222;
+}
+
+body.toddler article p:last-of-type::after {
+    content: "🌞";
+    color: var(--primary-text);
+}
+
+body.toddler h1::before {
+    content: "🐻";
+    color: var(--tertiary-text);
+}
+
+body.toddler h2::before {
+    content: "🐶";
+    font-weight: 100;
+    color: var(--secondary-text);
+}
+
+body.toddler h4::before {
+    content: "🐺";
+    font-weight: 100;
+    color: #ccc;
+}
+/** end: toddler **/
+
+/** start: minified **/
+body.minified {
+    font-family: Courier, monospace;
+}
+
+body.minified main * {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    line-height: 9px;
+    font-weight: 100;
+    background-color: #fff;
+    color: #000;
+    text-transform: lowercase;
+    text-decoration: none;
+    font-style: normal;
+    letter-spacing: -1px;
+}
+
+body.minified main::after {
+    display: block;
+    content: "/** minified size: 1.2kb */";
+    font-size: 10px;
+    line-height: 9px;
+    font-weight: 100;
+    letter-spacing: -1px;
+    margin-top: 1rem;
+}
+
+body.minified main img {
+    display: none;
+}
+/** end: minified **/
 
 /** start: manpage **/
 body.manpage {
@@ -364,4 +486,28 @@ nav img {
 
 #theme-switch ul li:active {
     cursor: wait;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    h1 {
+        margin: 1rem;
+    }
+
+    section {
+        display: block;
+        margin: 2rem 0;
+    }
+
+    section:last-of-type {
+        margin-bottom: 0;
+    }
+
+    header {
+        margin: 1rem 0 0;
+    }
 }
