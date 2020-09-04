@@ -423,6 +423,12 @@ aside img {
     filter: grayscale(1);
 }
 
+article.gallery img {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+}
+
 section {
     display: grid;
     grid-gap: 1rem;
@@ -486,6 +492,16 @@ nav img {
 
 #theme-switch[open] span {
     display: inline;
+}
+
+@media only screen and (min-width: 1024px) {
+    #theme-switch {
+        width: 16rem;
+    }
+
+    #theme-switch span {
+        display: inline;
+    }
 }
 
 #current-theme {
