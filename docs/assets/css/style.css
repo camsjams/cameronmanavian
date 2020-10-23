@@ -431,6 +431,7 @@ article.gallery img {
 
 section {
     display: grid;
+    margin-top: 3rem;
     grid-gap: 1rem;
     grid-template-columns: 30vw 60vw;
     grid-template-areas:
