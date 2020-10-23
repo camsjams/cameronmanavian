@@ -556,3 +556,20 @@ nav img {
         margin: 1rem 0 0;
     }
 }
+
+#mc_embed_signup {
+    clear: left;
+}
+
+#mc_embed_signup form#mc-embedded-subscribe-form {
+   padding: 0;
+}
+
+#mc_embed_signup form#mc-embedded-subscribe-form h2 {
+   display: none;
+}
+
+#mc_embed_signup form#mc-embedded-subscribe-form input,
+#mc_embed_signup form#mc-embedded-subscribe-form .mce_inline_error {
+   border-radius: 0 !important;
+}
